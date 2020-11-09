@@ -29,10 +29,18 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   
   1. What is the difference between counter1 and counter2?
   
+    Counter 1 uses closure and is the correct way to create a counter because it follows DRY methodology.
+    Counter 2 uses global scope to initialize the counter so can only be used for one specific count.
+
   2. Which of the two uses a closure? How can you tell?
+
+  Counter 1 uses closure, its count adds 1 to the count variable within the child function of CounterMaker. (encloses)
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+
+    Counter 1 will always be preferable to counter 2 because it uses DRY Metholdology. Counter 2 uses global scope to initialize count variable and you never want to do this.
+
 */
 
 // counter1 code
@@ -161,6 +169,7 @@ function scoreboard(getInningScoreCB, inningCB, numOfInnings) {
 
   let tieMessage = `This game will require extra innings: ${finalArr[finalArr.length - 1].slice(10)}`
   let noTieMessage = `Final Score: ${finalArr[finalArr.length - 1].slice(10)}`
+
   if (checkAwayTie === checkHomeTie){
       finalArr.push(tieMessage)
   } else {
