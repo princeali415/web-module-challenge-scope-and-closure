@@ -39,7 +39,8 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
 
-    Counter 1 will always be preferable to counter 2 because it uses DRY Metholdology. Counter 2 uses global scope to initialize count variable and you never want to do this.
+    Counter 1 will always be preferable to counter 2 because it uses DRY Metholdology. 
+    Counter 2 uses global scope to initialize count variable and you never want to do this.
 
 */
 
