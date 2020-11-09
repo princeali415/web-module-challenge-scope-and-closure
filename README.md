@@ -43,6 +43,9 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+  Closure is the accesbaility of variables in your code, determines where you can access them.
+  
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -64,8 +67,16 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+  Used to enclose the function new roll
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+  The random number generated can change, the name can change. WHat stays the same is the # of rolls.
+
 c. What is the lexical scope of `newRoll`? 
+
+  function scope
 
 ### Task 2c - Exit Ticket
 
