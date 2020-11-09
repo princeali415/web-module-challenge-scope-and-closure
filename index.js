@@ -145,8 +145,28 @@ Use the scoreboard function below to do the following:
   */
 
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(getInningScoreCB, inningCB, numOfInnings) {
+  let finalArr = [];
+  let homeScore = 0;
+  let awayScore = 0;
+  for (let i = 1; i <= numOfInnings; i++){
+    const currentScore = getInningScoreCB(inningCB);
+    homeScore += currentScore.Home;
+    awayScore += currentScore.Away;
+    finalArr.push(`Inning ${i}: Away ${awayScore} - Home: ${homeScore}`)
+  }
+
+  let checkAwayTie = Number(finalArr[finalArr.length - 1].slice(15,17))
+  let checkHomeTie = Number(finalArr[finalArr.length - 1].slice(25))
+
+  let tieMessage = `This game will require extra innings: ${finalArr[finalArr.length - 1].slice(10)}`
+  let noTieMessage = `Final Score: ${finalArr[finalArr.length - 1].slice(10)}`
+  if (checkAwayTie === checkHomeTie){
+      finalArr.push(tieMessage)
+  } else {
+      finalArr.push(noTieMessage)
+  }
+  return finalArr
 }
 
 
