@@ -163,14 +163,14 @@ function scoreboard(getInningScoreCB, inningCB, numOfInnings) {
     const currentScore = getInningScoreCB(inningCB);
     homeScore += currentScore.Home;
     awayScore += currentScore.Away;
-    finalArr.push(`Inning ${i}: Away ${awayScore} - Home: ${homeScore}`)
+    finalArr.push(`Inning ${i}: Away ${currentScore.Away} - Home: ${currentScore.Home}`)
   }
 
-  let checkAwayTie = Number(finalArr[finalArr.length - 1].slice(15,17))
-  let checkHomeTie = Number(finalArr[finalArr.length - 1].slice(25))
+  let checkAwayTie = homeScore
+  let checkHomeTie = awayScore
 
-  let tieMessage = `This game will require extra innings: ${finalArr[finalArr.length - 1].slice(10)}`
-  let noTieMessage = `Final Score: ${finalArr[finalArr.length - 1].slice(10)}`
+  let tieMessage = `This game will require extra innings: Away ${awayScore} - Home ${homeScore}`
+  let noTieMessage = `Final Score: Away ${awayScore} - Home ${homeScore}`
 
   if (checkAwayTie === checkHomeTie){
       finalArr.push(tieMessage)
@@ -180,7 +180,7 @@ function scoreboard(getInningScoreCB, inningCB, numOfInnings) {
   return finalArr
 }
 
-
+console.log(scoreboard(getInningScore, inning, 9))
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
