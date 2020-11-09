@@ -34,7 +34,8 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
 
   2. Which of the two uses a closure? How can you tell?
 
-  Counter 1 uses closure, its count adds 1 to the count variable within the child function of CounterMaker. (encloses)
+  Counter 1 uses closure, its count adds 1 to the count variable within the child function of CounterMaker. 
+  (encloses)
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
